@@ -1,0 +1,327 @@
+@Author: Atul Sahay <atul>
+@Date:   2018-08-13T11:52:05+05:30
+@Email:  atulsahay01@gmail.com
+@Filename: learn.txt
+@Last modified by:   atul
+@Last modified time: 2018-08-19T20:34:36+05:30
+
+
+for cost in 500 ranges please multiply it with 2
+
+
+power = 7
+
+cost = 514.897004562180541143
+
+learn = 0.1
+  iterations = 1000
+
+  # weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+  weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,1.09)
+
+2.
+
+cost : 514.202864048305286815
+
+learn = 0.1
+  iterations = 1000
+
+  # weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+  weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,1.05)
+
+3.
+
+cost : 513.298057622226679086
+
+learn = 0.1
+  iterations = 1000
+
+  # weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+  weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,1)
+
+4.
+
+error : 33.11011
+cost : 509.208405682665670611
+
+learn = 0.1
+  iterations = 1000
+
+  # weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+  weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.9)
+
+5.
+
+cost : 508.051560120712451862
+
+learn = 0.1
+iterations = 1000
+
+# weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.75)
+
+6.
+
+error = 33.11011
+
+cost : 509.208405682665670611
+
+learn = 0.1
+iterations = 1000
+
+# weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.8)
+
+
+power  = 5
+
+1.
+
+error 33.19
+cost = 502.623970685411734394
+learn = 0.1
+iterations = 1000
+
+# weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.8)
+
+
+power = 9
+
+1.
+
+error = 33.0666
+cost = 512.71414308990935313
+learn = 0.1
+
+# weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.8)
+
+2.
+
+error = 32.949494
+cost = 510.475963283599583065
+learn = 0.1
+
+weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.7)
+
+3.
+
+error = 32.933313
+
+cost = 508
+cost = 510.475963283599583065
+learn = 0.1
+
+weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.6)
+
+4.
+
+error = 32.91831
+cost = 498
+learn = 0.1
+
+weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.3)
+
+5.
+
+error = 491.07181931555783192
+
+learn = 0.1
+  iterations = 1000
+
+  # weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+  weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.1)
+
+6
+
+error = 32.99
+
+learn = 0.1
+  iterations = 1000
+
+  # weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+  weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.1)
+
+
+power = 11
+
+1.
+
+error 32.8777
+
+cost 501.6644420796
+
+learn = 0.1
+  iterations = 1000
+
+  # weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+  weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.3)
+
+
+2.
+
+teration 999 | Cost: 503.720206335113402929 Cost_reg 516.5807
+31023826956516
+
+learn = 0.1
+  iterations = 1000
+
+  # weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+  weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.3)
+
+power = 17
+
+1.
+
+error = 32.811
+
+learn = 0.1
+  iterations = 1000
+
+  # weights = update_weights(learn,iterations,x_train.values,y_train.values,weights)
+  weights = gradientDescent(x_train.values, y_train.values, weights, 0.009, 32000,iterations,0.2)
+
+
+
+
+############################ NEW ################################################
+1. submitted -------- 32.76269
+iteration 730 | Cost_reg 1036.102647140478893562
+Cost_valid_old 1122.035566177721875647
+Cost_valid_curr 1122.035576808738369436
+lambda: 10000.000000    learn:0.001000
+
+Diff:85.921657735369080910
+
+2.
+
+teration 715 | Cost_reg 1033.482797809866497118
+Cost_valid_old 1115.387826085673623311
+Cost_valid_curr 1115.387854471180162363
+lambda: 8000.000000     learn:0.001000
+
+Diff:81.891807065056127612
+
+3.
+teration 822 | Cost_reg 1026.430208265527426192
+Cost_valid_old 1101.262472840467808055
+Cost_valid_curr 1101.262488131178770345
+lambda: 5000.000000     learn:0.001000
+
+Diff:74.817013307808565514
+
+4.
+teration 1184 | Cost_reg 1015.217789628799891943
+Cost_valid_old 1086.290447758664413413
+Cost_valid_curr 1086.290452804756341720
+lambda: 3000.000000     learn:0.001000
+
+Diff:71.057872969656500572
+
+5.
+teration 1688 | Cost_rg 1003.318374605609619721
+Cost_valid_old 1073.854306582763456390
+Cost_valid_curr 1073.854308007453255414
+lambda: 2000.000000     learn:0.001000
+
+Diff:70.522778926420073731
+
+6.
+
+teration 1616 | Cost_reg 1004.883908228200425583
+Cost_valid_old 1075.407808527469569526
+Cost_valid_curr 1075.407813744125860467
+lambda: 2100.000000     learn:0.001000
+
+Diff:70.510511110830407233
+
+7.
+
+teration 1550 | Cost_reg 1006.349123106250090132
+Cost_valid_old 1076.872010202909450527
+Cost_valid_curr 1076.872013795853490592
+lambda: 2200.000000     learn:0.001000
+
+Diff:70.509278114476728661
+
+8. submit
+
+teration 748 | Cost_reg 1037.145539877368491943
+Cost_valid_old 1124.749272929149128686
+Cost_valid_curr 1124.749298215575436188
+lambda: 11000.000000    learn:0.001000
+
+Diff:87.593491049141221083
+
+9. submit
+
+teration 511 | Cost_reg 1037.261755384825164583
+Cost_valid_old 1119.580632949880282467
+Cost_valid_curr 1119.580636112286811112
+lambda: 110900.000000   learn:0.001000   P-Norm = 4
+
+Diff:82.300452014113261612
+
+10. submit
+
+teration 367 | Cost_reg 1037.896387546817322800
+Cost_valid_old 1114.612586483802260773
+Cost_valid_curr 1114.612589134222162102
+lambda: 119000.000000   learn:0.001000   P-Norm = 6
+
+Diff:76.693289107487544243
+
+11. biases - sigmoidal submitted --- 32.60321
+
+teration 5328 | Cost_reg 1040.179873456502036788
+Cost_valid_old 1093.415007206548352769
+Cost_valid_curr 1093.415007397611134365
+lambda: 740.000000      learn:0.001000
+
+Diff:53.234030937904435632
+
+12. bias - Gaussian submitted ------- 32.66542
+
+teration 335 | Cost_reg 1038.030676439241005937
+Cost_valid_old 1099.393839132729226549
+Cost_valid_curr 1099.393920349684549365
+lambda: 13000.000000    learn:0.001000
+
+Diff:61.324867345521170137
+
+13. lambda = 0 submitted ---- 39.87926
+
+teration 603502 | Cost_reg 760.90590109215122538
+Cost_valid_old 726.684941062964298908
+Cost_valid_curr 726.684941062966231584
+lambda: 0.000000        learn:0.030000
+
+Diff:34.220961581810570351
+
+14. p = 4 norm submitted ----- 32.73488
+
+teration 518 | Cost_reg 1036.877551579356804723
+Cost_valid_old 1118.861163783287338447
+Cost_valid_curr 1118.861189012485738203
+lambda: 109000.000000   learn:0.001000   P-Norm = 4
+
+Diff:81.965035595715107775
+
+15. pnorm = 6 submitted -------- 32.71304
+
+teration 367 | Cost_reg 1037.896387546817322800
+Cost_valid_old 1114.612586483802260773
+Cost_valid_curr 1114.612589134222162102
+lambda: 119000.000000   learn:0.001000   P-Norm = 6
+
+Diff:76.693289107487544243
+
+16. pnorm = 6 and inverse Sigmoid submitted --------- 32.59869
+
+teration 215 | Cost_reg 1048.123778150038333479
+Cost_valid_old 1097.412015738770378448
+Cost_valid_curr 1097.412015993267459635
+lambda: 706.000000      learn:0.001000   P-Norm = 6
+
+Diff:49.284048753764864159

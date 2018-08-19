@@ -3,7 +3,7 @@
 # @Email:  atulsahay01@gmail.com
 # @Filename: model1.py
 # @Last modified by:   atul
-# @Last modified time: 2018-08-19T22:45:18+05:30
+# @Last modified time: 2018-08-19T20:37:14+05:30
 
 import pandas as pd
 import numpy as np
@@ -38,13 +38,12 @@ def to_map(data_set):
 
     return data_set
 
-# Feature scaling , here I have used min_max which has a unique property of 0 mean and 1 standard deviation, plot is normal distribution
+# Feature scaling , here I have used min_max
 def to_normalize(data_set):
     global train_mean, train_std
     train_mean = data_set.mean()
     train_std = data_set.std()
-    data_set = (data_set - data_set.mean())/data_set.std()
-    # data_set = (data_set - data_set.min())/(data_set.max() - data_set.min())
+    data_set = (data_set - data_set.min())/(data_set.max() - data_set.min())
     return data_set
 
 # Split in x and y
@@ -58,7 +57,6 @@ def split(data):
 def get_features(file_path):
 	# Given a file path , return feature matrix and target labels
     data = pd.read_csv(file_path)
-    #data = data.sample(frac=1).reset_index(drop=True)
     return split(data)
 
 # mean square Error
@@ -69,13 +67,13 @@ def mean_square_error(x,y_label,theta,lam):
     cost = np.sum(loss ** 2)
     cost_reg = cost + lam*np.sum(np.power(theta,2))
     return cost_reg/m
+
 ############################################# Another Variant of Gradient##################
 def gradientDescent(x, y_label, theta, alpha, Iterations,lam,x_valid,y_valid,error):
     m = x.shape[0]
     xTrans = x.transpose()
     cost_valid_old = math.inf
     train_cost_old = math.inf
-    # print(x_valid.shape[0])
     best_theta = theta
     for i in range(Iterations):
         hypothesis = np.dot(x, theta)
@@ -116,8 +114,6 @@ def generate_output(phi_test, weights):
     for i in range(int(len(phi_test))):
         # print(phi_test[i])
         y_pred = weights.dot(phi_test[i])
-        # y_P_list.append(y_pred)
-        # print(y_pred)
         if(y_pred<0):
             y_pred = 0
         # y_pred = int(round(y_pred))
@@ -152,7 +148,7 @@ def gradientDescentP(x, y_label, theta, alpha, Iterations,lam,x_valid,y_valid,er
         if(i%100==0):
             print("\nIteration %d | Train_cost_reg %0.18f \nCost_valid_old %0.18f \nCost_valid_curr %0.18f" % (i, train_cost_curr,cost_valid_old,cost_valid_curr))
 
-        # breaking iteration if breaking criteria met
+        # breaking iteration if halting criteria met
         if(cost_valid_curr>cost_valid_old):
             print("\nStopped due to cost_valid criteria met")
             break
@@ -190,14 +186,7 @@ def gaussian(x, mu, sig):
 
 
 ################################################# Task 4 Ends ##########################################################
-#
-#
-# def task1(phi, y):
-#
-#
-# 	return w_final
-#
-#
+
 def generatePlots(x, y, theta):
 # 	"""
 # 	 generates and saves plots of top three features with target variable.
@@ -225,27 +214,7 @@ def generatePlots(x, y, theta):
 
         # function to show the plot
         plt.show()
-# def task3(phi, y , lamda, p):
-#
-#
-#
-# 	return w_final
-#
-# def task4(phi, y):
-# 	#Try out two different basis functions
-#
-# 	return w_final
-#
-#
-#
-# def task5():
-# 	# get best weights
-# 	# Use any optimization / modification to linear regression you can
-#
-#
-# 	return w_best
-#
-#
+
 
 def main():
     """
@@ -275,27 +244,17 @@ def main():
 
     ####################### Normalizing the data points##############################
     x_train = to_normalize(x_train)
-    #Using basis function on x_train
-    #x_train= np.power(x_train,pow)
-    #################################
-    #print(x_train)
-    # x_train = to_normalize(x_train)
-    # x_train = x_train.fillna(0)
-
+ 
     # To take validation set out in proportion of 20-80 #############################
     indexes = int(0.80*x_train.shape[0])
     x_train, x_valid = x_train.iloc[:indexes], x_train.iloc[indexes:]
     y_train, y_valid = y_train.iloc[:indexes], y_train.iloc[indexes:]
-    # print(x_valid.shape,x_train.shape)
-    # print(y_valid.shape,y_train.shape)
+
     ####################### Normalizing the data points##############################
     x_test = to_normalize(x_test)
     x_test.promotion = x_test.promotion.fillna(0)
 
-    # using basis function on x
-    #x_test = np.power(x_test,pow)
-    #x_test = to_normalize(x_test)
-    #x_test = x_test.fillna(0)
+   
     ####################################################
 
     #Appending a series of Ones for bias in x_train
@@ -310,29 +269,12 @@ def main():
     ones = np.ones(x_test.shape[0])
     x_test.insert(loc=x_test.shape[1], column='Ones', value=ones)
     ################################################################
-    # print(x_test)
 
-    ############################## Weights are intialised####################
+
+    ############################## Weights are intialised ####################
     weights = np.ones(x_train.shape[1])
 
-    '''only for intermedaite I have used w8
-    #weights = np.asarray([  1.17060638e-04,   2.35004099e-05,  -1.30034190e-04,
-            -6.00073925e-07,   1.44797284e-04,  -1.21922294e-04,
-            -2.72050584e-04,   5.26221663e-04,   4.09867733e-05,
-            -4.16564801e-04,   5.18866714e-05,   1.04937370e-04,
-             7.10802144e-05,  -1.04007447e-04,  -1.19510175e-04,
-             1.11695455e-04,  -1.79680686e-05,  -2.72377937e-05,
-            -7.60613142e-06,  -3.40653639e-05,   1.54812658e-05,
-             2.62793430e-06,  -1.78809030e-07,   9.99996409e-01,
-             2.75190075e-17])
 
-    weights = np.asarray([-2.4939705517793422, -0.53974573559169647, 1.0491918338698636, 0.16653430461185/
-684, 0.45656696338442215, 5.0809184369857272, -0.24554144887005949, 1.71871231073/
-11848, -1.2673354445690064, -1.9000018027212746, -1.3791808114877206, 3.123807206/
-5368114, 0.24339423293013179, 13.572180704418875, -0.99178304418971552, -3.255300/
-5972305851, -0.18079819497701097, -4.2608779675490114, 0.29195264761876505, 3.180/
-6330096196036, 0.077131364057355919, 0.72720412498405451, 0.15508153191195595, 0.0010186968442210439, 6.8950000000000253])
-'''
 #########################################################################
 
 
